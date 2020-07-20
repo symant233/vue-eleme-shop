@@ -12,12 +12,15 @@ border-1px($color)
     transform scaleY(0.5)
 
 bg-image($url)
-  background-image url($url +"@2x.png")
+  background-image url("./images/" + $url +"@2x.png")
   @media (min-device-pixel-ratio:3),(-webkit-min-device-pixel-ratio:3)
-    background-image url($url +"@3x.png")
+    background-image url("./images/" + $url +"@3x.png")
 
 
 bg-star($url)
-  background-image url( '../star/'+$url +"@2x.png")
+  background-image url( '../star/images/'+$url +"@2x.png")
   @media (min-device-pixel-ratio:3),(-webkit-min-device-pixel-ratio:3)
-    background-image url('../star/'+ $url +"@3x.png")
+    background-image url('../star/images/'+ $url +"@3x.png")
+
+fade-out(color, amount = 50%)
+  color - rgba(0,0,0,amount)
