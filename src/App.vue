@@ -19,6 +19,7 @@
 <script>
 import axios from 'axios';
 import header from './components/Header/Header';
+import config from '../config';
 
 export default {
   data() {
@@ -30,11 +31,9 @@ export default {
     'ele-header': header,
   },
   created() {
-    axios.get('/api2/seller').then((response) => {
-      const result = response.data;
-      console.log(result);
-      if (result.code === 'OK') {
-        this.seller = result.data;
+    axios.get(config.mock.seller).then((response) => {
+      if (response.status === 200) {
+        this.seller = response.data.data;
       }
     });
   },

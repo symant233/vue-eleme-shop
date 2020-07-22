@@ -38,7 +38,9 @@
       <div class="detail-wrapper">
         <div class="detail-main clearfix">
           <div class="name">{{ seller.name }}</div>
-          <div class="star-wrapper">star组件内容</div>
+          <div class="star-wrapper">
+            <star :score="seller.score" :size="48"></star>
+          </div>
           <div class="title">
             <div class="line"></div>
             <div class="text">优惠信息</div>
@@ -68,7 +70,12 @@
 </template>
 
 <script>
+import Star from '../Star/Star';
+
 export default {
+  components: {
+    star: Star,
+  },
   props: {
     seller: Object,
   },
@@ -185,7 +192,7 @@ export default {
       background-size:100% 100%
       background-repeat:no-repeat
     .bulletin-text
-      font-size: 10px
+      font-size: 12px
       line-height: 28px
     .icon-keyboard_arrow_right
       position:absolute
