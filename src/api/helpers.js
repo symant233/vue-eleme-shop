@@ -19,6 +19,8 @@ export function get(url) {
           return data
         }
       })
-      .catch((e) => {})
+      .catch((e) => {
+        console.warn(e)
+      })
   }
 }

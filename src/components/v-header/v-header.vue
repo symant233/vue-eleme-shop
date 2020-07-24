@@ -19,13 +19,15 @@
       </div>
       <div v-if="seller.supports" class="support-count">
         <span class="count">{{ seller.supports.length }}个</span>
-        <i class="icon-keyboard_arrow_right"></i>
+        <!-- <i class="icon-keyboard_arrow_right"></i> -->
+        <i class="cubeic-arrow"></i>
       </div>
     </div>
     <div class="bulletin-wrapper">
       <span class="bulletin-title"></span
       ><span class="bulletin-text">{{ seller.bulletin }}</span>
-      <i class="icon-keyboard_arrow_right"></i>
+      <!-- <i class="icon-keyboard_arrow_right"></i> -->
+      <i class="cubeic-arrow"></i>
     </div>
     <div class="background">
       <img :src="seller.avatar" width="100%" height="100%" />
@@ -77,10 +79,9 @@ export default {
     position: relative
     display: flex
     align-items: center
-    padding: 24px 12px 18px 24px
+    padding: 22px 24px 16px 24px
     .avatar
       flex: 0 0 64px
-      width: 64px
       margin-right: 16px
       img
         border-radius: 2px
@@ -112,11 +113,10 @@ export default {
         .text
           line-height: 12px
           font-size: $fontsize-small-s
-
     .support-count
       position: absolute
-      right: 12px
-      bottom: 14px
+      right: 24px
+      bottom: 17px
       display: flex
       align-items: center
       padding: 0 8px
@@ -127,11 +127,13 @@ export default {
       background: $color-background-sss
       .count
         font-size: $fontsize-small-s
-      .icon-keyboard_arrow_right
+        padding-top: 1px
+        padding-left: 3px
+      // .icon-keyboard_arrow_right
+      .cubeic-arrow
         margin-left: 2px
         line-height: 24px
         font-size: $fontsize-small-s
-
   .bulletin-wrapper
     position: relative
     display: flex
@@ -153,8 +155,9 @@ export default {
       white-space: nowrap
       overflow: hidden
       text-overflow: ellipsis
-      font-size: $fontsize-small-s
-    .icon-keyboard_arrow_right
+      font-size: $bulletin-font-size
+    // .icon-keyboard_arrow_right
+    .cubeic-arrow
       flex: 0 0 10px
       width: 10px
       font-size: $fontsize-small-s

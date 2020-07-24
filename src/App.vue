@@ -11,6 +11,10 @@ import { getSeller } from './api'
 import VHeader from 'components/v-header/v-header'
 
 export default {
+  name: 'App',
+  components: {
+    VHeader,
+  },
   data() {
     return {
       seller: {
@@ -46,20 +50,13 @@ export default {
     },
   },
   created() {
-    this._getSeller()
+    getSeller({
+      id: this.seller.id,
+    }).then((seller) => {
+      this.seller = Object.assign({}, this.seller, seller)
+    })
   },
-  methods: {
-    _getSeller() {
-      getSeller({
-        id: this.seller.id,
-      }).then((seller) => {
-        this.seller = Object.assign({}, this.seller, seller)
-      })
-    },
-  },
-  components: {
-    VHeader,
-  },
+  methods: {},
 }
 </script>
 
@@ -68,9 +65,11 @@ export default {
 
 #app
   .tab-wrapper
-    position: fixed
-    top: 136px
-    left: 0
-    right: 0
-    bottom: 0
+    // position: fixed
+    // top: 136px
+    // left: 0
+    // right: 0
+    // bottom: 0
+    position: relative
+    height: 100vh
 </style>
