@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
-    <div v-show="visible" class="header-detail g-fixed" @touchmove.stop.prevent>
-      <div class="detail-wrapper clear-fix">
+    <div v-show="visible" class="header-detail f-fixed" @touchmove.stop.prevent>
+      <div class="detail-wrapper">
         <div class="detail-main">
           <h1 class="name">{{ seller.name }}</h1>
           <div class="star-wrapper">
@@ -111,7 +111,6 @@ export default {
           padding: 0 12px
           font-weight: 700
           font-size: $fontsize-medium
-
       .supports
         width: 80%
         margin: 0 auto

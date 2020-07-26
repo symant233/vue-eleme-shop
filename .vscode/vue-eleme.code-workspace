@@ -1,11 +1,11 @@
 {
   "folders": [
-	{
-		"path": ".."
-	},
-	{
-		"path": "..\\next"
-	}
-],
+    {
+      "path": ".."
+    },
+    {
+      "path": "..\\..\\vue-sell"
+    }
+  ],
   "settings": {}
 }
